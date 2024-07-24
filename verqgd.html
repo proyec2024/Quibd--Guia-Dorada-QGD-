@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/QGD/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/verqgd.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c73931048.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="interior">
+            <a href="index.php" class="logo"><img src="../img/imagen_QGD-removebg-.png" alt=""></a>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href=""><img class="p-1" src="../img/grafico-de-barras.png" alt="" width="30" height="30">Anúnciate</a></li>
+                    <li><a href=""><img class="p-1" src="../img/estrella.png" alt="" width="30" height="30">Escriba una reseña</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   <center> <div id="logo-text" class="logo-text">
+        Detalles del Producto<sup>SM</sup>
+    </div></center>
+    <div class="container mt-5">
+        <div id="productDetails" class="product-details">
+            <!-- Aquí se mostrarán los detalles del producto -->
+        </div>
+    </div>
+    <footer class="pie-pagina mt-5">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="../img/imagen_QGD-removebg-.png" alt="logo de sitio">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div> 
+            <div class="box">
+                <h2>Siguenos</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                    <a href="https://www.whatsapp.com/?lang=es_LA" class="fa fa-whatsapp"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Quibdó GUIA Dorada</b> - Todos los Derechos Reservados</small>
+        </div>
+    </footer>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const producto = JSON.parse(localStorage.getItem('productoSeleccionado'));
+            const productDetails = document.getElementById('productDetails');
+            const logoText = document.getElementById('logo-text');
+            
+            // Mapa de servicios a íconos
+            const servicioIconos = {
+                'Entrega a domicilio': 'fa-truck',
+                'Soporte técnico': 'fa-tools',
+                'Asesoría': 'fa-user-tie',
+                'Instalación': 'fa-cogs',
+                'Tecnologia':'',
+                'internet':' fa-solid fa-wifi',
+                
+                // Añade más servicios y sus íconos aquí
+            };
+            
+            // Crear una función para generar íconos de servicios
+            function generarIconosServicios(servicios) {
+                return servicios.split(',').map(servicio => {
+                    const iconClass = servicioIconos[servicio.trim()] || 'fa-question'; // Usa un ícono por defecto si no hay coincidencia
+                    return `<i class="fas ${iconClass} service-icon"></i>${servicio.trim()}`;
+                }).join('<br>');
+            }
+            
+            // Actualiza el contenido del div logo-text con el nombre del producto
+            logoText.innerHTML = `${producto.nombre}<sup>SM</sup>`;
+            
+            // Actualiza los detalles del producto
+            productDetails.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="product-image">
+                            <img src="${producto.urlImagen}" class="img-fluid" alt="${producto.nombre}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-map">
+                            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gRKejj8V19oBvo6wGMgqcDcYMv7oZIU&ehbc=2E312F" width="640" height="480"></iframe>
+                        </div>
+                        
+                        <div class="product-info mt-4">
+                            <h5 class="card-title">${producto.nombre}</h5>
+                            <p class="card-text"><strong>Reseña:</strong> ${producto.reseña}</p>
+                            <p class="card-text"><strong>Dirección:</strong> ${producto.dirección}</p>
+                            <p class="card-text"><strong>Contacto:</strong> ${producto.contacto}</p>
+                            <p class="card-text"><strong>Servicios:</strong><br>${generarIconosServicios(producto.servicios)}</p>
+                            <p class="card-text"><strong>Horarios de Atención:</strong> ${producto.horarios}</p>
+                        </div>
+                    </div>
+                </div>`;
+            //<div class="product-map">
+             //   <iframe 
+               // src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(producto.direccion)}"
+                // allowfullscreen
+                // loading="lazy"
+                //class="map-iframe">
+            //</iframe>
+        //</div>
+        });
+    </script>
+</body>
+</html>

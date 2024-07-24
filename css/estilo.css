@@ -1,0 +1,382 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: white;
+}
+
+/* Header */
+header {
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+/* Interior */
+.interior {
+    max-width: 100%;
+    padding: 0 10px;
+    margin: auto;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 0;
+}
+
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navegacion ul li a {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+}
+
+.navegacion ul li a:hover {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.navegacion .submenu .hijos {
+    display: none;
+    background: #bebbbb;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px;
+}
+
+.navegacion .submenu .hijos li {
+    display: block;
+    overflow: hidden;
+}
+
+.navegacion .submenu .hijos a {
+    padding: 10px;
+}
+
+.navegacion ul li:hover .hijos {
+    display: block;
+}
+
+/* Card */
+/*.card {
+    display: inline-block;
+    background-color: #ffffff;
+    padding-top: 13px;
+    margin: 40px;
+    border-radius: 20px;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 5px 2.5px 0px 0px rgba(255, 242, 0, 0.75);
+    /*background-color: #ffc107;*/
+    
+
+.card {
+    background-color: #ffffff;
+    padding-top: 13px;
+    border-radius: 20px;
+    width: 300px;
+    max-width: 300px;
+    height: 460px;
+    overflow: hidden;
+    margin: 40px;
+    box-shadow: 5px 2.5px 0px rgba(255, 242, 0, 0.75);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 242, 0, 0.75);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from { transform: scale(0) }
+    to { transform: scale(1) }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Search Section */
+.search-section {
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+    width: 100%;
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-container input[type="text"] {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    flex: 1;
+    border-radius: 30px;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+.search-container .location {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #cccaca;
+    border-right: 1px solid #cccaca;
+}
+
+.search-container .location i {
+    margin-right: 5px;
+}
+
+.search-container .search-button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* Logo Text */
+.logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.logo-text sup {
+    font-size: 10px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+/* Icon Row */
+.icon-row {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.icon-row i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.pie-pagina {
+    width: 100%;
+    background-color: #c7cccf;
+    padding: 45px 0;
+}
+
+.pie-pagina .grupo-1 {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 200px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: rgb(255, 255, 0);
+}
+
+.pie-pagina .grupo-2 {
+    background-color: gray;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logo img {
+        width: 80px;
+    }
+
+    .search-section {
+        height: 250px;
+        padding: 30px 0;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        margin: 30px 0;
+    }
+
+    .card {
+        margin: 20px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

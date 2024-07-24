@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/QGD/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/pruebas2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1>Panel Administrador</h1>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <!-- Añadir -->
+            <div class="añadir">
+                <h2>Añadir</h2>
+                <form>
+                    <label for="productoAñadir">Nombre del producto</label>
+                    <input type="text" id="productoAñadir" name="nombreDelProducto">
+
+                    <label for="reseñaAñadir">Reseña</label>
+                    <input type="text" id="reseñaAñadir">
+
+                    <label for="direccionAñadir">Dirección</label>
+                    <input type="text" id="direccionAñadir">
+
+                    <label for="contactoAñadir">Número de contacto</label>
+                    <input type="text" id="contactoAñadir">
+
+                    <label for="categoriaAñadir">Categoría</label>
+                    <select id="categoriaAñadir">
+                        <option value="">---</option>
+                        <!-- Añade tus categorías aquí -->
+                        <option value="categoria1">Tecnologia</option>
+                        <option value="categoria2">Salud</option>
+                        <option value="categoria3">Construccion</option>
+                        <option value="categoria4">Gastronomia</option>
+                        <option value="categoria5">Motos</option>
+                        <option value="categoria6">Carros</option>
+                        <option value="categoria7">Hoteleria</option>
+                        <option value="categoria8">Electricidad</option>
+                        <option value="categoria9">Belleza</option>
+                        <option value="categoria10">Jugueteria</option>
+                    </select>
+
+                    <label for="ImagenAñadir">Imagen</label>
+                    <input type="file" id="ImagenAñadir">
+
+                    <label for="imagenesSecundariasAñadir">Imágenes secundarias</label>
+                    <input type="file" id="imagenesSecundariasAñadir" multiple>
+
+                    <label for="serviciosAñadir">Servicios</label>
+                    <input type="text" id="serviciosAñadir">
+
+                    <label for="horariosAñadir">Horarios de atención</label>
+                    <input type="text" id="horariosAñadir">
+
+                    <input class="button" type="button" id="botonAñadir" value="Añadir">
+                </form>
+            </div>
+
+            <!-- Editar -->
+            <div class="editar">
+                <h2>Editar</h2>
+                <form id="formEditar">
+                    <label for="productoEditar">Nombre del producto</label>
+                    <select id="productoEditar">
+                        <option value="">---</option>
+                    </select>
+
+                    <label for="atributoEditar">Atributo</label>
+                    <select id="atributoEditar">
+                        <option value="">---</option>
+                        <option value="reseña">Reseña</option>
+                        <option value="dirección">Dirección</option>
+                        <option value="imagen">Imagen</option>
+                        <option value="contacto">Número de contacto</option>
+                        <option value="categoria">Categoría</option>
+                        <option value="imagenesSecundarias">Imágenes secundarias</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="horarios">Horarios de atención</option>
+                    </select>
+
+                    <div class="leo text-bg-dark" id="inputContainer">
+                        <label for="nuevoAtributo">Nuevo valor</label>
+                        <input type="text" id="nuevoAtributo">
+                    </div>
+
+                    <input class="button" type="button" id="botonEditar" value="Editar">
+                </form>
+            </div>
+
+            <!-- Eliminar -->
+            <div class="eliminar">
+                <h2>Eliminar</h2>
+                <form>
+                    <label for="productoEliminar">Nombre del producto</label>
+                    <select id="productoEliminar">
+                        <option value="">---</option>
+                    </select>
+                    <input class="button" type="button" id="botonEliminar" value="Eliminar">
+                </form>
+            </div>
+        </div>
+
+        <!-- Mostrar el mensaje -->
+        <div class="contenedorMensaje">
+            <div id="mensaje"></div>
+        </div>
+
+        <!-- Productos -->
+        <div class="contenedorProductos">
+            <h2>Productos</h2>
+            <div class="mostrarProductos" id="mostrarProductos">
+                <!-- Aquí se mostrarán los productos -->
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/ver_script.js"></script>
+</body>
+
+</html>
